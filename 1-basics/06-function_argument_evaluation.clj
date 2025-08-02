@@ -3,6 +3,5 @@
   (print printable-argument)
   (println "*****"))
 
-(print-with-asterisks "hi")
-; *****hi*****
-;=> nil
+(print-with-asterisks "hi") ; nil
+; (out) *****hi*****

@@ -2,6 +2,7 @@
   (list test (cons 'do body)))
 
 (broken-when (= 1 1) (println "Math works!"))
-; ClassCastException java.lang.Boolean cannot be cast to clojure.lang.IFn
-;   user/eval316 (NO_SOURCE_FILE:1)
+; (err) java.lang.ClassCastException
 
+((= 1 1) (do (println "Math works!")))
+; (err) java.lang.ClassCastException

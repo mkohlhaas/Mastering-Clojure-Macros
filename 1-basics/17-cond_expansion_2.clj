@@ -1,5 +1,4 @@
 ;; ascending another ladder rung, treating `when` as a function:
-
 (list 'if 'clauses
       (cons 'do
             '((list 'if (first clauses)
