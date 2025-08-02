@@ -1,15 +1,17 @@
 (defmacro assert [x]
-  (when *assert* ;; check the dynamic var `clojure.core/*assert*` to make sure
-                 ;;   assertions are enabled
+  (when *assert* ;; check the dynamic var `clojure.core/*assert*` to make sure assertions are enabled
     (list 'when-not x
           (list 'throw
                 (list 'new 'AssertionError
                       (list 'str "Assert failed: "
-                            (list 'pr-str (list 'quote x))))))))
+                            (list 'pr-str (list 'quote x)))))))) ; #'user/assert
 
 (assert (= 1 2))
-;=> AssertionError Assert failed: (= 1 2)  user/eval214 (NO_SOURCE_FILE:1)
+; (err) java.lang.AssertionError: Assert failed: (= 1 2)
 
-(assert (= 1 1))
-;=> nil
+(when-not (= 1 2)
+  (throw (new AssertionError (str "Assert failed: " (pr-str '(= 1 2))))))
+; (err) java.lang.AssertionError: Assert failed: (= 1 2)
+
+(assert (= 1 1)) ; nil
 
