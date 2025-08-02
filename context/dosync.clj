@@ -1,11 +1,3 @@
-;---
-; Excerpted from "Mastering Clojure Macros",
-; published by The Pragmatic Bookshelf.
-; Copyrights apply to this code. It may not be used to create training material, 
-; courses, books, articles, and the like. Contact us if you are in doubt.
-; We make no guarantees that this code is fit for any purpose. 
-; Visit http://www.pragmaticprogrammer.com/titles/cjclojure for more book information.
-;---
 (defmacro dosync
   "Runs the exprs (in an implicit do) in a transaction that encompasses
   exprs and any nested calls.  Starts a transaction if none is already
@@ -33,7 +25,7 @@
 (def ant-2 (ref {:id 2 :x 10 :y 10}))
 
 (dosync
-  (alter ant-1 update-in [:x] inc)
-  (alter ant-1 update-in [:y] inc)
-  (alter ant-2 update-in [:x] dec)
-  (alter ant-2 update-in [:y] dec))
+ (alter ant-1 update-in [:x] inc)
+ (alter ant-1 update-in [:y] inc)
+ (alter ant-2 update-in [:x] dec)
+ (alter ant-2 update-in [:y] dec))

@@ -1,11 +1,3 @@
-;---
-; Excerpted from "Mastering Clojure Macros",
-; published by The Pragmatic Bookshelf.
-; Copyrights apply to this code. It may not be used to create training material, 
-; courses, books, articles, and the like. Contact us if you are in doubt.
-; We make no guarantees that this code is fit for any purpose. 
-; Visit http://www.pragmaticprogrammer.com/titles/cjclojure for more book information.
-;---
 (ns trptcolin.trymplicit
   (:require [riddley.walk :as walk]))
 
@@ -22,18 +14,18 @@
   (->> bindings
        (partition-all 2)
        (mapcat
-         (fn [[k v]]
-           (let [[k v] [k (add-try v)]]
-             [k v])))
+        (fn [[k v]]
+          (let [[k v] [k (add-try v)]]
+            [k v])))
        vec))
 
 (defn- wrap-fn-decl [clauses]
   (let [[name? args? fn-bodies]
-          (if (symbol? (first clauses))
-            (if (vector? (second clauses))
-              [(first clauses) (second clauses) (drop 2 clauses)]
-              [(first clauses) nil (doall (map wrap-fn-body (rest clauses)))])
-            [nil nil (doall (map wrap-fn-body clauses))])]
+        (if (symbol? (first clauses))
+          (if (vector? (second clauses))
+            [(first clauses) (second clauses) (drop 2 clauses)]
+            [(first clauses) nil (doall (map wrap-fn-body (rest clauses)))])
+          [nil nil (doall (map wrap-fn-body clauses))])]
     (cond->> fn-bodies
       (and name? args?) (#(list (cons 'try %)))
       (not (and name? args?)) (map add-try)

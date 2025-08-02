@@ -1,11 +1,3 @@
-;---
-; Excerpted from "Mastering Clojure Macros",
-; published by The Pragmatic Bookshelf.
-; Copyrights apply to this code. It may not be used to create training material, 
-; courses, books, articles, and the like. Contact us if you are in doubt.
-; We make no guarantees that this code is fit for any purpose. 
-; Visit http://www.pragmaticprogrammer.com/titles/cjclojure for more book information.
-;---
 (ns delimc.core)
 
 snip
@@ -14,7 +6,7 @@ snip
 
 (defn shift* [cc]
   (throw (Exception.
-           "Please ensure shift is called from within the reset macro.")))
+          "Please ensure shift is called from within the reset macro.")))
 
 (defmacro shift [k & body]
   `(shift* (fn [~k] ~@body)))

@@ -1,11 +1,3 @@
-;---
-; Excerpted from "Mastering Clojure Macros",
-; published by The Pragmatic Bookshelf.
-; Copyrights apply to this code. It may not be used to create training material, 
-; courses, books, articles, and the like. Contact us if you are in doubt.
-; We make no guarantees that this code is fit for any purpose. 
-; Visit http://www.pragmaticprogrammer.com/titles/cjclojure for more book information.
-;---
 (ns n01se.syntax.repl
   (:require [n01se.seqex :refer [cap recap]]
             [n01se.syntax :refer [defterminal defrule defsyntax
@@ -26,9 +18,8 @@
                  (opt (cat '& sym))
                  (opt (cat :as sym)))))
 
-(defrule binding-map
+(defrule binding-map)
   ;; [complex logic mostly because of destructuring]
-)
 
 (defrule binding-form
   (alt sym binding-vec binding-map))
