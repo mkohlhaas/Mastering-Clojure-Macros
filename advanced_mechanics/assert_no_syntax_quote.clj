@@ -7,9 +7,9 @@
                       (list 'str "Assert failed: "
                             (list 'pr-str (list 'quote x))))))))
 
-user=> (assert (= 1 2))
+(assert (= 1 2))
 ;=> AssertionError Assert failed: (= 1 2)  user/eval214 (NO_SOURCE_FILE:1)
 
-user=> (assert (= 1 1))
+(assert (= 1 1))
 ;=> nil
 

@@ -11,6 +11,6 @@
    `(let [arg# ~x]
       (if arg# (our-and-fixed ~@next) arg#))))
 
-user=> (our-and-fixed (do (println "hi there") (= 1 2)) (= 3 4))
+(our-and-fixed (do (println "hi there") (= 1 2)) (= 3 4))
 ;hi there
 ;=> false

@@ -4,7 +4,7 @@
      (send-email current-user ~messages)
      (log ~@messages)))
 
-user=> (notify-everyone ["item #1 processed" "by worker #72"])
+(notify-everyone ["item #1 processed" "by worker #72"])
 ;[INFO] item #1 processed : by worker #72
 ;=> nil
 

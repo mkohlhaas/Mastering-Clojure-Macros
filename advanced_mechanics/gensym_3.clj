@@ -2,7 +2,7 @@
   (let [y (gensym)]
     `(fn [~y] (+ ~x ~y))))
 
-user=> y
+y
 100
-user=> ((make-adder (+ y 3)) 5)
+((make-adder (+ y 3)) 5)
 108

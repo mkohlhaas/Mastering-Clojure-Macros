@@ -1,7 +1,7 @@
-user=> (use 'criterium.core)
-user=> (defn length-1 [x] (.length x))
+(use 'criterium.core)
+(defn length-1 [x] (.length x))
 ;=> #'user/length-1
-user=> (bench (length-1 "hi there!"))
+(bench (length-1 "hi there!"))
 ;Evaluation count : 26255400 in 60 samples of 437590 calls.
 ;             Execution time mean : 3.250388 µs
 ;    Execution time std-deviation : 850.690042 ns

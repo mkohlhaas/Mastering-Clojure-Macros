@@ -1,9 +1,9 @@
-user=> (gensym)
+(gensym)
 ;=> G__671
-user=> (gensym)
+(gensym)
 ;=> G__674
-user=> (gensym "xyz")
+(gensym "xyz")
 ;=> xyz677
-user=> (gensym "xyz")
+(gensym "xyz")
 ;=> xyz680
 

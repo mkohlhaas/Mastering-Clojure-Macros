@@ -6,7 +6,7 @@
 ;   [s]
 ;     (contains? (. clojure.lang.Compiler specials) s))
 
-user=> (sort (keys clojure.lang.Compiler/specials))
+(sort (keys clojure.lang.Compiler/specials))
 ;=> (& . case* catch def deftype* do finally fn* if let* letfn* loop*
 ;     monitor-enter monitor-exit new quote recur reify* set! throw try var
 ;     clojure.core/import*)

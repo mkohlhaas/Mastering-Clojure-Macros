@@ -1,9 +1,9 @@
-user=> (defn length-2 [^String x] (.length x))
+(defn length-2 [^String x] (.length x))
 ;=> #'user/length-2
-user=> (bench (length-2 "hi there!"))
+(bench (length-2 "hi there!"))
 ;             Execution time mean : 1.476211 ns
 ;    Execution time std-deviation : 0.295418 ns
 
-user=> (bench (.length "hi there!"))
+(bench (.length "hi there!"))
 ;             Execution time mean : 3.423909 ns
 ;    Execution time std-deviation : 0.202517 ns

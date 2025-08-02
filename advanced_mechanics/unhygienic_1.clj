@@ -1,2 +1,2 @@
-user=> `(* ~'x ~'x)
+`(* ~'x ~'x)
 ;=> (clojure.core/* x x)

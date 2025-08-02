@@ -1,6 +1,6 @@
-user=> (defmacro square [x] `(* ~x ~x))
+(defmacro square [x] `(* ~x ~x))
 ;=> #'user/square
-user=> @#'square
+@#'square
 ;=> #<user$square user$square@2a717ef5>
-user=> (fn? @#'square)
+(fn? @#'square)
 ;=> true

@@ -8,11 +8,11 @@
        (map (fn [k] [(list 'quote k) k]))
        (into {})))
 
-user=> (inspect-caller-locals-1)
+(inspect-caller-locals-1)
 {}
-user=> (inspect-caller-locals-2)
+(inspect-caller-locals-2)
 {}
-user=> (let [foo "bar" baz "quux"] (inspect-caller-locals-1))
+(let [foo "bar" baz "quux"] (inspect-caller-locals-1))
 {baz "quux", foo "bar"}
-user=> (let [foo "bar" baz "quux"] (inspect-caller-locals-2))
+(let [foo "bar" baz "quux"] (inspect-caller-locals-2))
 {baz "quux", foo "bar"}

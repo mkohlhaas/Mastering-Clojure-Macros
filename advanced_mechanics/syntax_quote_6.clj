@@ -1,4 +1,4 @@
-user=> (ns foo (:refer-clojure :exclude [map]))
+(ns foo (:refer-clojure :exclude [map]))
 ;=> nil
 foo=> (def map {:a 1 :b 2})
 ;=> #'foo/map

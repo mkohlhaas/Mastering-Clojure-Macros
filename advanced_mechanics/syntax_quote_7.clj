@@ -1,8 +1,8 @@
-user=> (defmacro squares [xs] `(map #(* % %) ~xs))
+(defmacro squares [xs] `(map #(* % %) ~xs))
 ;=> #'user/squares
-user=> (squares (range 10))
+(squares (range 10))
 ;=> (0 1 4 9 16 25 36 49 64 81)
-user=> (ns foo (:refer-clojure :exclude [map]))
+(ns foo (:refer-clojure :exclude [map]))
 ;=> nil
 foo=> (def map {:a 1 :b 2})
 ;=> #'foo/map

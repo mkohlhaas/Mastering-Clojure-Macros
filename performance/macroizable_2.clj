@@ -3,9 +3,9 @@
         std-dev (/ (- pessimistic optimistic) 6)]
     (double (+ weighted-mean (* 2 std-dev)))))
 
-user=> (calculate-estimate {:optimistic 3 :realistic 5 :pessimistic 8})
+(calculate-estimate {:optimistic 3 :realistic 5 :pessimistic 8})
 ;=> 6.833333333333333
 
-user=> (bench (calculate-estimate {:optimistic 3 :realistic 5 :pessimistic 8}))
+(bench (calculate-estimate {:optimistic 3 :realistic 5 :pessimistic 8}))
 ;             Execution time mean : 4.814157 ns
 ;    Execution time std-deviation : 0.761096 ns

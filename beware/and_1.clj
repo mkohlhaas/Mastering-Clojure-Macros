@@ -4,13 +4,13 @@
   ([x & next]
    `(if ~x (our-and ~@next) ~x)))
 
-user=> (our-and true true)
+(our-and true true)
 ;=> true
-user=> (our-and true false)
+(our-and true false)
 ;=> false
-user=> (our-and true true false)
+(our-and true true false)
 ;=> false
-user=> (our-and true true nil)
+(our-and true true nil)
 ;=> nil
-user=> (our-and 1 2 3)
+(our-and 1 2 3)
 ;=> 3
