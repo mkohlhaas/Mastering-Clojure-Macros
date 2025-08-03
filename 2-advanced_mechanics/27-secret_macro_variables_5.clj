@@ -4,5 +4,6 @@
 ^{:doc "this is good stuff"} (inspect-called-form 1 2 3)
 ; {:form (inspect-called-form 1 2 3)}
 
+;; with the from comes the metadata attached to it
 (meta (:form *1))
 ; {:line 1, :column 1, :doc "this is good stuff"}

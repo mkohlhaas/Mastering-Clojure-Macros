@@ -1,3 +1,9 @@
+;; ;;;;;;;;;;;;;;;;;;;
+;; Secret Macro Voodoo
+;; ;;;;;;;;;;;;;;;;;;;
+
+;; two special values: &form and &env
+
 (require '[clojure.pprint :refer [pprint]])
 
 ;; &form and &env are special
