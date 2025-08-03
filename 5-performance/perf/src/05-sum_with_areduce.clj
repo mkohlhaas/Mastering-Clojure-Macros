@@ -1,3 +1,8 @@
+#_{:clj-kondo/ignore [:use]}
+(use 'criterium.core)
+
+(def array (into-array Integer/TYPE (range 100)))
+
 (defn array-sum [^ints xs]
   (areduce xs index ret 0 (+ ret (aget xs index))))
 

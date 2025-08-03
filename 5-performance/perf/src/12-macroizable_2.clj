@@ -1,6 +1,9 @@
+#_{:clj-kondo/ignore [:use]}
+(use 'criterium.core)
+
 (defmacro calculate-estimate [{:keys [optimistic realistic pessimistic]}]
   (let [weighted-mean (/ (+ optimistic (* realistic 4) pessimistic) 6)
-        std-dev (/ (- pessimistic optimistic) 6)]
+        std-dev       (/ (- pessimistic optimistic) 6)]
     (double (+ weighted-mean (* 2 std-dev)))))
 
 (calculate-estimate {:optimistic 3 :realistic 5 :pessimistic 8})

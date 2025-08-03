@@ -1,3 +1,6 @@
+#_{:clj-kondo/ignore [:use]}
+(use 'criterium.core)
+
 (defn calculate-estimate [{:keys [optimistic realistic pessimistic]}]
   (let [weighted-mean (/ (+ optimistic (* realistic 4) pessimistic) 6)
         std-dev (/ (- pessimistic optimistic) 6)]
@@ -10,6 +13,7 @@
 ;             Execution time mean : 1.974506 µs
 ;    Execution time std-deviation : 22.817749 ns
 
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro calculate-estimate [estimates]
   `(let [estimates# ~estimates
          optimistic# (:optimistic estimates#)

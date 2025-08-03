@@ -1,4 +1,8 @@
+#_{:clj-kondo/ignore [:use]}
+(use 'criterium.core)
+
 (require 'hiphip.int)
+
+(def array (into-array Integer/TYPE (range 100)))
+
 (bench (hiphip.int/asum array))
-;             Execution time mean : 144.535507 ns
-;    Execution time std-deviation : 1.587751 ns
