@@ -1,3 +1,4 @@
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro dosync
   "Runs the exprs (in an implicit do) in a transaction that encompasses
   exprs and any nested calls.  Starts a transaction if none is already
@@ -8,6 +9,7 @@
   [& exprs]
   `(sync nil ~@exprs))
 
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro sync
   "transaction-flags => TBD, pass nil for now
 
@@ -17,7 +19,7 @@
   transaction and flow out of sync. The exprs may be run more than
   once, but any effects on Refs will be atomic."
   {:added "1.0"}
-  [flags-ignored-for-now & body]
+  [_flags-ignored-for-now & body]
   `(. clojure.lang.LockingTransaction
       (runInTransaction (fn [] ~@body))))
 

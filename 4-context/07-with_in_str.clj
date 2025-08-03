@@ -1,3 +1,6 @@
+(require '[clojure.string :as str])
+
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro with-in-str
   "Evaluates body in a context in which *in* is bound to a fresh
   StringReader initialized with the string s."
@@ -8,8 +11,8 @@
      (binding [*in* s#]
        ~@body)))
 
-(defn join-input-lines [separator]
-  (print (clojure.string/replace (slurp *in*) "\n" ",")))
+(defn join-input-lines [_separator]
+  (print (str/replace (slurp *in*) "\n" ",")))
 
 (let [result (with-in-str "hello there\nhi\nsup\nohai"
                (with-out-str

@@ -1,3 +1,4 @@
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro future
   "Takes a body of expressions and yields a future object that will
   invoke the body in another thread, and will cache the result and
@@ -7,9 +8,9 @@
   {:added "1.1"}
   [& body] `(future-call (^{:once true} fn* [] ~@body)))
 
-(def f (future (Thread/sleep 5000)
+(def f (future (Thread/sleep 2000)
                (println "done!")
                (+ 41 1)))
 
 @f
-;=> 42 (after sleeping 5 seconds and then printing "done!")
+;=> 42 (after sleeping 2 seconds and then printing "done!")

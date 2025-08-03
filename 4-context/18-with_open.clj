@@ -1,3 +1,4 @@
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro with-open
   "bindings => [name init ...]
 

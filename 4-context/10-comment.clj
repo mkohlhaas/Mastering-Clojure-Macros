@@ -1,7 +1,8 @@
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro comment
   "Ignores body, yields nil"
   {:added "1.0"}
-  [& body])
+  [& _body])
 
 (comment
   (println "wow")

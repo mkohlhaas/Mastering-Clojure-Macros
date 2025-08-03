@@ -1,4 +1,5 @@
 (import 'java.io.FileInputStream)
+
 (defn read-file [file-path]
   (let [buffer (byte-array 4096)
         contents (StringBuilder.)]

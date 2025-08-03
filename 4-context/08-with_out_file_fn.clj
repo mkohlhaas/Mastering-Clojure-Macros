@@ -1,9 +1,21 @@
+(require '[clojure.java.io :as io])
+
 (defn with-out-file [file body-fn]
-  (with-open [writer (clojure.java.io/writer file :append true)]
+  (with-open [writer (io/writer file :append true)]
     (binding [*out* writer]
       (body-fn))))
 
-(let [file (java.io.File. (System/getProperty "user.home") "event-stream.log")]
+(defn log [message]
+  (let [timestamp (.format (java.text.SimpleDateFormat. "yyyy-MM-dd'T'HH:mmZ")
+                           (java.util.Date.))]
+    (println timestamp "[INFO]" message)))
+
+(defn process-events [events]
+  (doseq [event events]
+    ;; do some meaningful work based on the event
+    (log (format "Event %s has been processed" (:id event)))))
+
+(let [file (java.io.File. (System/getProperty "java.io.tmpdir") "event-stream.log")]
   (with-out-file file
     (fn []
       (process-events [{:id 88894} {:id 88895} {:id 88897}])
