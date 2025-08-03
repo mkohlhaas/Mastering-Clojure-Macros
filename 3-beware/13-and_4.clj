@@ -1,9 +1,11 @@
+;; buggy version
 (defmacro our-and
   ([] true)
   ([x] x)
   ([x & next]
    `(if ~x (our-and ~@next) ~x)))
 
+;; fixed version using auto-gensym
 (defmacro our-and-fixed
   ([] true)
   ([x] x)
@@ -11,6 +13,6 @@
    `(let [arg# ~x]
       (if arg# (our-and-fixed ~@next) arg#))))
 
-(our-and-fixed (do (println "hi there") (= 1 2)) (= 3 4))
-;hi there
-;=> false
+;; ✓ (printed only once)
+(our-and-fixed (do (println "hi there") (= 1 2)) (= 3 4)) ; false
+; (out) hi there
