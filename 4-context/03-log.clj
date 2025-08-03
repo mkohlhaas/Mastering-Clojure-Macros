@@ -1,3 +1,4 @@
+;; Clojure’s printing functions use dynamic bindings
 (defn log [message]
   (let [timestamp (.format (java.text.SimpleDateFormat. "yyyy-MM-dd'T'HH:mmZ")
                            (java.util.Date.))]

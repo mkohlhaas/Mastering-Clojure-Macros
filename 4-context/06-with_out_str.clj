@@ -1,3 +1,5 @@
+#_{:clj-kondo/ignore [:redefined-var]}
+;; Clojure has several built-in macros similar to with-out-file, e.g. `with-out-str`
 (defmacro with-out-str
   "Evaluates exprs in a context in which *out* is bound to a fresh
   StringWriter.  Returns the string created by any nested printing

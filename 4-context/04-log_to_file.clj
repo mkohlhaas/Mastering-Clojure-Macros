@@ -1,5 +1,6 @@
 (require '[clojure.java.io :as io])
 
+;; `println` uses `*out*`
 (defn log [message]
   (let [timestamp (.format (java.text.SimpleDateFormat. "yyyy-MM-dd'T'HH:mmZ")
                            (java.util.Date.))]
@@ -7,9 +8,9 @@
 
 (defn process-events [events]
   (doseq [event events]
-    ;; do some meaningful work based on the event
     (log (format "Event %s has been processed" (:id event)))))
 
+;; redirecting output by `binding` `*out*` to a file
 (let [file (java.io.File. (System/getProperty "java.io.tmpdir") "event-stream.log")]
   (with-open [file (io/writer file :append true)]
     (binding [*out* file]

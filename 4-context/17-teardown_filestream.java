@@ -1,3 +1,7 @@
+// /////////////////////
+// Cleaning Up Resources
+// /////////////////////
+
 public String readFile(String filePath) throws IOException {
   FileInputStream fileStream = null;
   StringBuilder contents = new StringBuilder();

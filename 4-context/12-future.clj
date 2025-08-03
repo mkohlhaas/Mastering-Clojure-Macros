@@ -12,5 +12,4 @@
                (println "done!")
                (+ 41 1)))
 
-@f
-;=> 42 (after sleeping 2 seconds and then printing "done!")
+@f ; 42 (after sleeping 2 seconds and then printing "done!")

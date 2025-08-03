@@ -1,3 +1,8 @@
+;; ;;;;;;;;;;;;;;;;
+;; Dynamic Bindings
+;; ;;;;;;;;;;;;;;;;
+
+;; radius is lexically scoped
 (defn circle-area [radius]
   (* Math/PI radius radius))
 

@@ -1,5 +1,6 @@
 (import 'java.io.FileInputStream)
 
+;; see also implementation of `slurp` in `clojure.core`
 (defn read-file [file-path]
   (let [buffer (byte-array 4096)
         contents (StringBuilder.)]

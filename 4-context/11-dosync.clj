@@ -1,4 +1,5 @@
 #_{:clj-kondo/ignore [:redefined-var]}
+;; `dosync` is the entry point to Clojure’s software transactional memory(STM) system
 (defmacro dosync
   "Runs the exprs (in an implicit do) in a transaction that encompasses
   exprs and any nested calls.  Starts a transaction if none is already
@@ -31,3 +32,6 @@
  (alter ant-1 update-in [:y] inc)
  (alter ant-2 update-in [:x] dec)
  (alter ant-2 update-in [:y] dec))
+
+@ant-1 ; {:id 1, :x 1, :y 1}
+@ant-2 ; {:id 2, :x 9, :y 9}
