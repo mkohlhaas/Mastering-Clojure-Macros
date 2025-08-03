@@ -1,2 +1,1 @@
-`(* ~'x ~'x)
-;=> (clojure.core/* x x)
+`(* ~'x ~'x) ; (clojure.core/* x x)

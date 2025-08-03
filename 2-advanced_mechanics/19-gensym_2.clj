@@ -1,9 +1,7 @@
-(gensym)
-;=> G__671
-(gensym)
-;=> G__674
-(gensym "xyz")
-;=> xyz677
-(gensym "xyz")
-;=> xyz680
+(gensym) ; G__517
 
+(gensym) ; G__520
+
+(gensym "xyz") ; xyz523
+
+(gensym "xyz") ; xyz526

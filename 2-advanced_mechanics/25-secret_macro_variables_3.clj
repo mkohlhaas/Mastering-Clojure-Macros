@@ -8,11 +8,14 @@
        (map (fn [k] [(list 'quote k) k]))
        (into {})))
 
-(inspect-caller-locals-1)
-{}
-(inspect-caller-locals-2)
-{}
+(inspect-caller-locals-1) ; {}
+
+(inspect-caller-locals-2) ; {}
+
+#_{:clj-kondo/ignore [:unused-binding]}
 (let [foo "bar" baz "quux"] (inspect-caller-locals-1))
-{baz "quux", foo "bar"}
+; {foo "bar", baz "quux"}
+
+#_{:clj-kondo/ignore [:unused-binding]}
 (let [foo "bar" baz "quux"] (inspect-caller-locals-2))
-{baz "quux", foo "bar"}
+; {foo "bar", baz "quux"}
