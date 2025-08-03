@@ -1,3 +1,6 @@
+;; Example code - not runnable!
+
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 (def app-1
   (wrap-head
    (wrap-file-info
@@ -6,6 +9,7 @@
                      (wrap-params app-handler)))
                    "public"))))
 
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 ;; The ,,, placeholders represent the result from the previous line
 (def app-2
   (-> app-handler                 ;; app-handler

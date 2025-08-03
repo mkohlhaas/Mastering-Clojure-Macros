@@ -14,4 +14,3 @@
 (swap! (:blocked owen) conj (:name colin))
 (follow-user colin owen)
 ; Owen has blocked Colin
-;=> nil

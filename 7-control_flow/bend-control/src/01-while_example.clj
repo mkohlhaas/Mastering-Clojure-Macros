@@ -3,7 +3,6 @@
 (while (< @counter 3)
   (println @counter)
   (swap! counter inc))
-; 0
-; 1
-; 2
-;=> nil
+; (out) 0
+; (out) 1
+; (out) 2

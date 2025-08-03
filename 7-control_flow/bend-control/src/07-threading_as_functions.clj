@@ -3,7 +3,7 @@
     (* 3)
     (+ 4)
     (* 5))
-;=> 65
+; 65
 
 (defn thread-first-fn [x & fns]
   (reduce (fn [acc f] (f acc))
@@ -15,8 +15,15 @@
                  #(* % 3)
                  #(+ % 4)
                  #(* % 5))
-;=> 65
+; 65
 
 ;; or even:
 (defn thread-first-fn' [x & fns]
-  ((apply comp (reverse fns)) x))
+  ((apply comp (reverse fns)) x)) ; #'user/thread-first-fn'
+
+(thread-first-fn' 1
+                  #(+ % 2)
+                  #(* % 3)
+                  #(+ % 4)
+                  #(* % 5))
+; 65

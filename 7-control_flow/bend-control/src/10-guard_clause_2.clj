@@ -1,3 +1,5 @@
+#_{:clj-kondo/ignore [:use]}
+;; https://github.com/swannodette/delimc
 (use 'delimc.core) ;; gives us `shift` and `reset`
 
 (defn make-user [name]
@@ -7,8 +9,9 @@
    :followers (atom #{})})
 
 (def colin (make-user "Colin"))
-(def owen (make-user "Owen"))
+(def owen  (make-user "Owen"))
 
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 (defn follow-user [user user-to-follow]
   (reset
    (shift k
@@ -22,4 +25,3 @@
 (swap! (:blocked owen) conj (:name colin))
 (follow-user colin owen)
 ; Owen has blocked Colin
-;=> nil

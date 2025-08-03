@@ -1,3 +1,4 @@
+#_{:clj-kondo/ignore [:redefined-var]}
 (defmacro ->
   "Threads the expr through the forms. Inserts x as the
   second item in the first form, making a list of it if it is not a

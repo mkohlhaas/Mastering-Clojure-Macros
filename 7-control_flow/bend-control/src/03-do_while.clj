@@ -15,4 +15,3 @@
 ; Guess the secret I'm thinking: lion
 ; Guess the secret I'm thinking: zebra
 ; You got it!
-;=> nil

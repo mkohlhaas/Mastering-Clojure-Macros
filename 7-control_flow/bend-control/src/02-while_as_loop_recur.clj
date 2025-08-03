@@ -5,8 +5,6 @@
     (println @counter)
     (swap! counter inc)
     (recur)))
-; 0
-; 1
-; 2
-;=> nil
-
+; (out) 0
+; (out) 1
+; (out) 2
