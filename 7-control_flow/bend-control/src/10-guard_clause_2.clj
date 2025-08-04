@@ -18,7 +18,7 @@
 (defn follow-user [user user-to-follow]
   (reset
    (shift k
-          (if (contains? @(:blocked user-to-follow) (:name user))
+          (when (contains? @(:blocked user-to-follow) (:name user))
             (println (:name user-to-follow) "has blocked" (:name user)
                      (k :ok)
                      (println "Adding follow relationship...")

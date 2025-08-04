@@ -1,7 +1,7 @@
 ;; just sample code - not runnable!
 
 #_{:clj-kondo/ignore [:namespace-name-mismatch]}
-(ns delimc.core)
+;; (ns delimc.core)
 
 #_{:clj-kondo/ignore [:unresolved-symbol]}
 snip
