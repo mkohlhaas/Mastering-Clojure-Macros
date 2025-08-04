@@ -1,3 +1,6 @@
+#_{:clj-kondo/ignore [:refer-all]}
+(require '[delimc.core :refer :all])
+
 (defmacro choice [xs]
   `(shift k# (mapcat k# ~xs)))
 
@@ -16,4 +19,4 @@
       (insist (< a b c))
       (insist (= (square c) (+ (square a) (square b))))
       [a b c]))))
-;=> ([3 4 5] [5 12 13] [6 8 10] [8 15 17] [9 12 15])
+; ([3 4 5] [5 12 13] [6 8 10] [8 15 17] [9 12 15])

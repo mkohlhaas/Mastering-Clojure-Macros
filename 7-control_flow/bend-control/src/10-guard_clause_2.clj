@@ -1,6 +1,9 @@
-#_{:clj-kondo/ignore [:use]}
-;; https://github.com/swannodette/delimc
-(use 'delimc.core) ;; gives us `shift` and `reset`
+;; use `lein repl` not babashka!
+
+;; (ns guard-clause-2
+;;   (:require [delimc.core :refer [reset shift]]))
+
+(require '[delimc.core :refer [reset shift]])
 
 (defn make-user [name]
   {:name name
@@ -16,12 +19,14 @@
   (reset
    (shift k
           (if (contains? @(:blocked user-to-follow) (:name user))
-            (println (:name user-to-follow) "has blocked" (:name user))
-            (k :ok)))
-   (println "Adding follow relationship...")
-   (swap! (:following user) conj (:name user-to-follow))
-   (swap! (:followers user-to-follow) conj (:name user))))
+            (println (:name user-to-follow) "has blocked" (:name user)
+                     (k :ok)
+                     (println "Adding follow relationship...")
+                     (swap! (:following user) conj (:name user-to-follow))
+                     (swap! (:followers user-to-follow) conj (:name user)))))))
 
-(swap! (:blocked owen) conj (:name colin))
+(swap! (:blocked owen) conj (:name colin)) ; #{"Colin"}
+
 (follow-user colin owen)
-; Owen has blocked Colin
+; (out) Adding follow relationship...
+; (out) Owen has blocked Colin :ok nil #{Owen} #{Colin}

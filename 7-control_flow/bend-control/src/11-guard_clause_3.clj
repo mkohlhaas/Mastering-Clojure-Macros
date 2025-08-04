@@ -1,3 +1,15 @@
+#_{:clj-kondo/ignore [:refer-all]}
+(require '[delimc.core :refer :all])
+
+(defn make-user [name]
+  {:name name
+   :blocked (atom #{})
+   :following (atom #{})
+   :followers (atom #{})})
+
+(def colin (make-user "Colin"))
+(def owen  (make-user "Owen"))
+
 (defmacro require-user-not-blocked [user user-to-follow]
   `(shift k#
           (if (contains? @(:blocked ~user-to-follow) (:name ~user))
@@ -12,5 +24,7 @@
    (swap! (:followers user-to-follow) conj (:name user))))
 
 (swap! (:blocked owen) conj (:name colin))
+; #{"Colin"}
+
 (follow-user colin owen)
-; Owen has blocked Colin
+; (out) Owen has blocked Colin

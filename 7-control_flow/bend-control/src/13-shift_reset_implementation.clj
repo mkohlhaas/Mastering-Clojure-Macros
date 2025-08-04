@@ -1,10 +1,17 @@
+;; just sample code - not runnable!
+
+#_{:clj-kondo/ignore [:namespace-name-mismatch]}
 (ns delimc.core)
 
-snip
-(defmulti transform (fn [[op & forms] k-expr] (keyword op)))
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 snip
 
-(defn shift* [cc]
+(defmulti transform (fn [[op & _forms] _k-expr] (keyword op)))
+
+#_{:clj-kondo/ignore [:unresolved-symbol]}
+snip
+
+(defn shift* [_cc]
   (throw (Exception.
           "Please ensure shift is called from within the reset macro.")))
 
@@ -16,8 +23,10 @@ snip
     (throw (Exception. "Please ensure shift has one argument.")))
   `(~(first (rest cons)) ~k-expr))
 
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 snip
 
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 (defmacro reset [& body]
   (binding [*ctx* (Context. nil)]
     (expr-sequence->cps body identity)))

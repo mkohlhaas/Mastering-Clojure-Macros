@@ -1,3 +1,6 @@
+#_{:clj-kondo/ignore [:refer-all]}
+(require '[delimc.core :refer :all])
+
 (macroexpand '(reset 1))
 ;=> (#<core$identity clojure.core$identity@750a6c68> 1)
 
@@ -16,5 +19,6 @@
 ;=> ((clojure.core/fn [k] (k 1))
 ;    #<core$identity clojure.core$identity@750a6c68>)
 
+#_{:clj-kondo/ignore [:unresolved-symbol]}
 (reset (shift k (k 1)))
 ;=> 1
