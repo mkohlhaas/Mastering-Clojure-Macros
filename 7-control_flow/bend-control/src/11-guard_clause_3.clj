@@ -18,7 +18,7 @@
 
 (defn follow-user [user user-to-follow]
   (reset
-   (require-user-not-blocked user user-to-follow)
+   (require-user-not-blocked user user-to-follow) ; early return if blocked
    (println "Adding follow relationship...")
    (swap! (:following user) conj (:name user-to-follow))
    (swap! (:followers user-to-follow) conj (:name user))))

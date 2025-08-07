@@ -10,8 +10,3 @@
 - 2-advanced_mechanics/25-secret_macro_variables_3.clj
   - \`'~k is equal to`(quote ~k)`and`(list 'quote k)`
   - `(list 'quote k)` going to syntax quoting: remove list, remove ', eval k
-
-### delimc
-
-- Nice project to study
-  - [delimc](https://github.com/swannodette/delimc)

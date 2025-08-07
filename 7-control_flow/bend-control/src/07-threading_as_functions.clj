@@ -19,7 +19,7 @@
 
 ;; or even:
 (defn thread-first-fn' [x & fns]
-  ((apply comp (reverse fns)) x)) ; #'user/thread-first-fn'
+  ((apply comp (reverse fns)) x))
 
 (thread-first-fn' 1
                   #(+ % 2)

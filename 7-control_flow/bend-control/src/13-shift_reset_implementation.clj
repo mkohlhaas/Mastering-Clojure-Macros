@@ -1,20 +1,13 @@
-;; just sample code - not runnable!
+;; extracts from delimc.core
 
-#_{:clj-kondo/ignore [:namespace-name-mismatch]}
 ;; (ns delimc.core)
-
-#_{:clj-kondo/ignore [:unresolved-symbol]}
-snip
 
 (defmulti transform (fn [[op & _forms] _k-expr] (keyword op)))
 
-#_{:clj-kondo/ignore [:unresolved-symbol]}
-snip
-
 (defn shift* [_cc]
-  (throw (Exception.
-          "Please ensure shift is called from within the reset macro.")))
+  (throw (Exception. "Please ensure shift is called from within the reset macro.")))
 
+#_{:clojure-lsp/ignore [:clojure-lsp/unused-public-var]}
 (defmacro shift [k & body]
   `(shift* (fn [~k] ~@body)))
 
@@ -24,9 +17,7 @@ snip
   `(~(first (rest cons)) ~k-expr))
 
 #_{:clj-kondo/ignore [:unresolved-symbol]}
-snip
-
-#_{:clj-kondo/ignore [:unresolved-symbol]}
+#_{:clojure-lsp/ignore [:clojure-lsp/unused-public-var]}
 (defmacro reset [& body]
   (binding [*ctx* (Context. nil)]
     (expr-sequence->cps body identity)))
